@@ -1,23 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import { Animated, StyleSheet, ActivityIndicator } from 'react-native';
 
-import { Container, ContainerImage, ImageView } from './styles';
+import { Container, ContainerImage } from './styles';
 
 interface ImageProps {
     img: string;
+    height?: number;
 }
 
-const Foto: React.FC = ({ img }: ImageProps) => {
-    const [isLoaded, setIsLoaded] = useState(false);
+const Foto: React.FC = ({ img, height = 500 }: ImageProps) => {
     const opacity = useRef(new Animated.Value(0)).current;
 
-    useEffect(() => {
-        setTimeout(() => setIsLoaded(true), 1500);
-    }, [])
-
-    function onLoadend () {
+    function onLoad () {
         Animated.timing(opacity, {
-            duration: 800,
             toValue: 1,
             useNativeDriver: true
         }).start();
@@ -25,25 +20,21 @@ const Foto: React.FC = ({ img }: ImageProps) => {
 
     return (
         <Container>
-            <ContainerImage
-                source={img}
-                blurRadius={4}
-            >
-                {
-                    isLoaded && (
-                        <Animated.Image
-                            style={[{
-                                flex: 1,
-                                width: 500,
-                                height: 500,
-                                aspectRatio: 1
-                            }, { opacity }]}
-                            source={img}
-                            onLoadEnd={onLoadend}
-                        />
-                    )
-                }
+            <ContainerImage>
+                <ActivityIndicator size="large" color="red" />
             </ContainerImage>
+            <Animated.Image
+                style={[{
+                    flex: 1,
+                    width: '100%',
+                    height: height,
+                    aspectRatio: 1,
+                    position: 'absolute'
+                }, { opacity }]}
+                source={img}
+                onLoad={onLoad}
+            />
+
         </Container >
     );
 }

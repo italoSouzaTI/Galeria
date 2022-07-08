@@ -102,6 +102,7 @@ const Galeria: React.FC = ({ photo }: ImageProps) => {
                                 onPress={() => actionSlideBtn(setIndexState, index)}
                             >
                                 <Foto
+                                    height={80}
                                     img={item.img}
                                 />
                             </BtnActionImage>
