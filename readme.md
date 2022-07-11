@@ -1,6 +1,9 @@
 # Galeria
 Um mini clone da visualização de fotos do app [HURB](https://www.hurb.com/br/?cmp=285992&prm=515&gclid=Cj0KCQjwlK-WBhDjARIsAO2sErQAwa2j6p3KTcp4aWPQmTq4GuspeWenOpmW91DauDYZmcK2oFi-zQcaAuonEALw_wcB).
 
+# Demo
+![demo](https://media.giphy.com/media/4TPYPokGOe78XXggU0/giphy.gif)
+
 # Acessar
 ```bash
 # Partindo do principio que você tem a cli do expo em sua maquina.
