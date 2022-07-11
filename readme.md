@@ -3,7 +3,7 @@ Um mini clone da visualização de fotos do app [HURB](https://www.hurb.com/br/?
 
 
 # DEMO
-![](https://user-images.githubusercontent.com/52186505/178309303-58f2a84c-3671-47bf-8e35-d002b853861d.MP4)
+![demo](https://user-images.githubusercontent.com/52186505/178309303-58f2a84c-3671-47bf-8e35-d002b853861d.MP4)
 
 
 # Acessar
